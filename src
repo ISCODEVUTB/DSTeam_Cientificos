@@ -5,12 +5,11 @@
 
 using namespace std;
 
-// Clase para representar un paquete
 class Paquete {
 public:
     string id;
     double peso;
-    string categoria; // elemental, regular, volumétrico
+    string categoria;
     string descripcion;
 
     Paquete(string id, double peso, string categoria, string descripcion)
@@ -22,13 +21,12 @@ public:
     }
 };
 
-// Clase para representar un envío
 class Envio {
 public:
     string id;
     string destinatario;
     vector<Paquete> paquetes;
-    string estado; // En tránsito, Entregado, etc.
+    string estado; 
 
     Envio(string id, string destinatario) : id(id), destinatario(destinatario), estado("En tránsito") {}
 
@@ -50,16 +48,13 @@ public:
     }
 };
 
-// Clase para gestionar usuarios
 class Usuario {
 public:
     string username;
     string password;
 
-    // Constructor por defecto
     Usuario() : username(""), password("") {}
 
-    // Constructor con parámetros
     Usuario(string username, string password) : username(username), password(password) {}
 
     bool autenticar(string inputPassword) {
@@ -67,15 +62,14 @@ public:
     }
 };
 
-// Clase principal del sistema
 class SistemaLogistica {
 private:
     vector<Paquete> paquetes;
     vector<Envio> envios;
-    map<string, Usuario> usuarios; // Mapa para almacenar usuarios registrados
+    map<string, Usuario> usuarios;
 
 public:
-    // Registrar un nuevo paquete
+ 
     void registrarPaquete() {
         string id, categoria, descripcion;
         double peso;
@@ -95,7 +89,6 @@ public:
         cout << "Paquete registrado exitosamente." << endl;
     }
 
-    // Crear un nuevo envío
     void crearEnvio() {
         string id, destinatario;
 
@@ -110,7 +103,6 @@ public:
         cout << "Envío creado exitosamente." << endl;
     }
 
-    // Agregar un paquete a un envío existente
     void agregarPaqueteAEnvio() {
         string idEnvio, idPaquete;
         cout << "Ingrese el ID del envío: ";
@@ -118,7 +110,6 @@ public:
         cout << "Ingrese el ID del paquete: ";
         cin >> idPaquete;
 
-        // Buscar el paquete
         Paquete* paqueteEncontrado = nullptr;
         for (auto& paquete : paquetes) {
             if (paquete.id == idPaquete) {
@@ -142,7 +133,6 @@ public:
         }
     }
 
-    // Mostrar información de todos los envíos
     void mostrarEnvios() {
         if (envios.empty()) {
             cout << "No hay envíos registrados." << endl;
@@ -153,7 +143,6 @@ public:
         }
     }
 
-    // Registrar un nuevo usuario
     void registrarUsuario() {
         string username, password;
 
@@ -166,7 +155,6 @@ public:
         cout << "Usuario registrado exitosamente." << endl;
     }
 
-    // Autenticar un usuario
     bool autenticarUsuario() {
         string username, password;
 
@@ -186,7 +174,6 @@ public:
     }
 };
 
-// Función para mostrar el menú
 void mostrarMenu() {
     cout << "\n--- Menú de Sistema de Logística ---" << endl;
     cout << "1. Registrar usuario" << endl;
@@ -199,7 +186,6 @@ void mostrarMenu() {
     cout << "Seleccione una opción: ";
 }
 
-// Función principal
 int main() {
     SistemaLogistica sistema;
     int opcion;
@@ -214,7 +200,6 @@ int main() {
                 break;
             case 2:
                 if (sistema.autenticarUsuario()) {
-                    // Si la autenticación es exitosa, continuar con las operaciones
                 }
                 break;
             case 3:
