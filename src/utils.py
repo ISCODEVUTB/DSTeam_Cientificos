@@ -43,13 +43,13 @@ def add_package_to_shipment(packages, shipments):
     package_id = input("Enter package ID: ")
 
     found_package = next(
-        (package for package in packages if package.id == package_id),
+        (pkg for pkg in packages if pkg.id == package_id),
         None
     )
 
     if found_package:
         found_shipment = next(
-            (shipment for shipment in shipments if shipment.id == shipment_id),
+            (shp for shp in shipments if shp.id == shipment_id),
             None
         )
         if found_shipment:
