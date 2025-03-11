@@ -35,16 +35,23 @@ def add_package_to_shipment(packages, shipments):
     """
     Add a package to an existing shipment.
 
-    :param packages: List of packages
-    :param shipments: List of shipments
+    Args:
+        packages: List of packages
+        shipments: List of shipments
     """
     shipment_id = input("Enter shipment ID: ")
     package_id = input("Enter package ID: ")
 
-    found_package = next((package for package in packages if package.id == package_id), None)
+    found_package = next(
+        (package for package in packages if package.id == package_id),
+        None
+    )
 
     if found_package:
-        found_shipment = next((shipment for shipment in shipments if shipment.id == shipment_id), None)
+        found_shipment = next(
+            (shipment for shipment in shipments if shipment.id == shipment_id),
+            None
+        )
         if found_shipment:
             found_shipment.add_package(found_package)
             print(f"Package added to shipment {shipment_id}")
