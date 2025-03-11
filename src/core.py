@@ -1,5 +1,10 @@
 from src.models import User
-from src.utils import register_package, create_shipment, add_package_to_shipment, show_shipments
+from src.utils import (
+    register_package,
+    create_shipment,
+    add_package_to_shipment,
+    show_shipments
+)
 
 
 class LogisticsSystem:
