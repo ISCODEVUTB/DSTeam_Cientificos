@@ -1,2 +1,0 @@
-# DSTeam_Cientificos
-
