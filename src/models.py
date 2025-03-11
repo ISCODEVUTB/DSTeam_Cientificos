@@ -7,10 +7,11 @@ class Package:
         """
         Initialize a new package.
 
-        :param id: Package ID
-        :param weight: Package weight in kg
-        :param category: Package category (elemental, regular, volumetric)
-        :param description: Package description
+        Args:
+            id: Package ID
+            weight: Package weight in kg
+            category: Package category (elemental, regular, volumetric)
+            description: Package description
         """
         self.id = id
         self.weight = weight
@@ -21,7 +22,10 @@ class Package:
         """
         Display package information.
         """
-        print(f"Package ID: {self.id}, Weight: {self.weight} kg, Category: {self.category}, Description: {self.description}")
+        print(
+            f"Package ID: {self.id}, Weight: {self.weight} kg, "
+            f"Category: {self.category}, Description: {self.description}"
+        )
 
 
 class Shipment:
