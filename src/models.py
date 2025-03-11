@@ -37,8 +37,9 @@ class Shipment:
         """
         Initialize a new shipment.
 
-        :param id: Shipment ID
-        :param recipient: Recipient name
+        Args:
+            id: Shipment ID
+            recipient: Recipient name
         """
         self.id = id
         self.recipient = recipient
@@ -49,7 +50,8 @@ class Shipment:
         """
         Add a package to the shipment.
 
-        :param package: Package object to add
+        Args:
+            package: Package object to add
         """
         self.packages.append(package)
 
@@ -57,7 +59,11 @@ class Shipment:
         """
         Display shipment information.
         """
-        print(f"Shipment ID: {self.id}, Recipient: {self.recipient}, Status: {self.status}")
+        print(
+            f"Shipment ID: {self.id}, "
+            f"Recipient: {self.recipient}, "
+            f"Status: {self.status}"
+        )
         print("Packages in this shipment:")
         for package in self.packages:
             package.show_info()
