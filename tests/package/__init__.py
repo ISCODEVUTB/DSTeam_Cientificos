@@ -1,1 +1,1 @@
-
+# Package tests initialization
